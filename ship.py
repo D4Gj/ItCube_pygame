@@ -1,21 +1,20 @@
 import pygame
-from settings import Settings
 
+class Ship:
+    """Класс для управления кораблём"""
 
-class Ship():
-    def __init__(self, ai_game):
-
-        self.screen = ai_game.screen
-        self.screen_rect = ai_game.screen.get_rect()
-        self.settings = ai_game.settings
-        self.image = pygame.image.load('images/ship.png')
+    def __init__(self,screen,settings):
+        """Инициализация корабля"""
+        self.screen = screen
+        self.screen_rect = screen.get_rect()
+        self.settings = settings
+        self.image = pygame.image.load('resources/spaceship.jpg')
         self.rect = self.image.get_rect()
         self.rect.midbottom = self.screen_rect.midbottom
-
-        self.x = float(self.rect.x)
-
         self.moving_right = False
         self.moving_left = False
+        self.x = float(self.rect.x)
+
 
     def update(self):
         if self.moving_right and self.rect.right < self.screen_rect.right:
@@ -25,4 +24,9 @@ class Ship():
         self.rect.x = self.x
 
     def blitme(self):
+        """Рисует в текущей позиции"""
         self.screen.blit(self.image, self.rect)
+
+    def center_ship(self):
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
