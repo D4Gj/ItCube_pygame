@@ -1,7 +1,7 @@
 class GameStats():
     """Статистика для игры"""
 
-    def __init__(self,game):
+    def __init__(self, game):
         self.settings = game.settings
         self.reset_stats()
         self.game_active = True

@@ -119,8 +119,8 @@ class AlienInvasion():
     def _update_aliens(self):
         self._check_fleet_edges()
         self.aliens.update()
-        #проверка коллизии пришелец корабль
-        if pygame.sprite.spritecollideany(self.ship,self.aliens):
+        # проверка коллизии пришелец корабль
+        if pygame.sprite.spritecollideany(self.ship, self.aliens):
             self._ship_hit()
         self._check_aliens_bottom()
 
@@ -155,6 +155,7 @@ class AlienInvasion():
             if alien.rect.bottom > screen_rect.bottom:
                 self._ship_hit()
                 break
+
 
 if __name__ == '__main__':
     # Создание экземпляра и запуск игры.

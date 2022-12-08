@@ -2,23 +2,24 @@ import pygame
 import settings
 from pygame.sprite import Sprite
 
+
 class Alien(Sprite):
     """Пришелец"""
 
-    def __init__(self,game):
+    def __init__(self, game):
         super().__init__()
         self.screen = game.screen
         self.settings = game.settings
 
-        #Загрузка картинки и назначение
+        # Загрузка картинки и назначение
         self.image = pygame.image.load("resources/good_alien.bmp")
         self.rect = self.image.get_rect()
 
-        #Появление левый верхний угол
+        # Появление левый верхний угол
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
 
-        #Сохранение точной горизонтальной позиции
+        # Сохранение точной горизонтальной позиции
         self.x = float(self.rect.x)
 
     def update(self):
