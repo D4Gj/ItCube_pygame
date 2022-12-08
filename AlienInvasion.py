@@ -120,9 +120,9 @@ class AlienInvasion():
         self._check_fleet_edges()
         self.aliens.update()
         # проверка коллизии пришелец корабль
-        if pygame.sprite.spritecollideany(self.ship, self.aliens):
-            self._ship_hit()
-        self._check_aliens_bottom()
+        # if pygame.sprite.spritecollideany(self.ship, self.aliens):
+        #     self._ship_hit()
+        # self._check_aliens_bottom()
 
     def _check_fleet_edges(self):
         for alien in self.aliens.sprites():
